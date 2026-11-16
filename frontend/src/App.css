@@ -1,0 +1,664 @@
+
+/* ==============================
+   GLOBAL STYLING
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: linear-gradient(180deg, #111827, #172554);
+  color: white;
+  padding: 30px 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 5px 0 20px rgba(15, 23, 42, 0.08);
+}
+
+.sidebar h2 {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 42px;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-button {
+  width: 100%;
+  padding: 15px 17px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #cbd5e1;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: white;
+  transform: translateX(3px);
+}
+
+.nav-button.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* ==============================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 32px;
+  min-width: 0;
+  width: calc(100% - 260px);
+}
+
+/* ==============================
+   HEADER
+================================ */
+
+header {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  border: 1px solid #e2e8f0;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 7px;
+  color: #172554;
+}
+
+header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ==============================
+   MOBILE HAMBURGER BUTTON
+================================ */
+
+.mobile-menu-btn {
+  display: none;
+  background: #172554;
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 23px;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+/* ==============================
+   WELCOME SECTION
+================================ */
+
+.welcome {
+  background: linear-gradient(120deg, #1d4ed8, #6366f1);
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+.welcome h2 {
+  font-size: 25px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.welcome p {
+  color: #dbeafe;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ==============================
+   DASHBOARD CARDS
+================================ */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cards .card {
+  margin-bottom: 0;
+}
+
+.cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #475569;
+}
+
+.card h2 {
+  font-size: 27px;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+
+/* ==============================
+   JOB CARDS
+================================ */
+
+.job-item {
+  margin-top: 20px;
+  border-left: 5px solid #3b82f6;
+}
+
+.job-item h3 {
+  font-size: 19px;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.job-item h4 {
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.job-item a,
+.job-footer a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.job-item a:hover,
+.job-footer a:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   JOB DETAILS
+================================ */
+
+.jobs-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.jobs-heading h2 {
+  color: #172554;
+  margin-bottom: 8px;
+}
+
+.jobs-heading p {
+  color: #64748b;
+}
+
+.job-count {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.job-number {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.job-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+  padding: 18px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.job-details strong,
+.job-skills strong,
+.job-description strong {
+  color: #334155;
+  font-size: 14px;
+}
+
+.job-skills,
+.job-description {
+  margin-top: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.skill-tags span {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.job-description p {
+  margin-top: 10px;
+}
+
+.job-description ul {
+  margin-top: 12px;
+  padding-left: 22px;
+}
+
+.job-description li {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.job-footer > span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ==============================
+   BUTTONS
+================================ */
+
+button {
+  font-family: inherit;
+}
+
+.card button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.2);
+}
+
+.card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==============================
+   INPUTS AND SELECTS
+================================ */
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  background: white;
+  color: #1e293b;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 22px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .job-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE + HAMBURGER
+================================ */
+
+@media (max-width: 650px) {
+  .app {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide sidebar by default */
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    min-width: 0;
+    height: 100vh;
+    padding: 25px 15px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  /* Show sidebar when menu is open */
+  .app.menu-open .sidebar {
+    display: block;
+  }
+
+  .sidebar h2 {
+    font-size: 23px;
+    margin-bottom: 25px;
+    padding-left: 5px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-button {
+    padding: 13px 12px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .nav-button:hover {
+    transform: none;
+  }
+
+  /* Hamburger button */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0 !important;
+    padding: 14px;
+  }
+
+  header {
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header p {
+    font-size: 13px;
+  }
+
+  .welcome {
+    padding: 24px 18px;
+    border-radius: 13px;
+    margin-bottom: 18px;
+  }
+
+  .welcome h2 {
+    font-size: 20px;
+  }
+
+  .welcome p {
+    font-size: 14px;
+  }
+
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+  }
+
+  .card h2 {
+    font-size: 23px;
+  }
+
+  .job-item {
+    margin-top: 14px;
+  }
+
+  .job-item h3 {
+    font-size: 17px;
+  }
+
+  .jobs-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .jobs-heading h2 {
+    font-size: 21px;
+  }
+
+  .job-count {
+    white-space: normal;
+  }
+
+  .job-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .job-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 15px 0;
+    padding: 14px 0;
+  }
+
+  .skill-tags {
+    gap: 7px;
+  }
+
+  .skill-tags span {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  .job-description li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .job-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-footer a {
+    text-align: center;
+    width: 100%;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 13px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 380px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .sidebar {
+    padding: 20px 12px;
+  }
+
+  .nav-button {
+    font-size: 12px;
+    padding: 11px 6px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  header h1 {
+    font-size: 19px;
+  }
+
+  .welcome h2 {
+    font-size: 18px;
+  }
+}
